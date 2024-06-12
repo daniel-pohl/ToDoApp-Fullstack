@@ -10,10 +10,11 @@ public class TodoService {
 
     private final TodoRepo todoRepository;
 
+    private final UuidService uuidService;
 
-    public TodoService(TodoRepo todoRepository) {
+    public TodoService(TodoRepo todoRepository, UuidService uuidService) {
         this.todoRepository = todoRepository;
-
+        this.uuidService = uuidService;
     }
 
     public List<Todo> allTodos() {
@@ -21,7 +22,7 @@ public class TodoService {
     }
 
     public Todo saveTodo(Todo todo) {
-
+        todo.setId(uuidService.generateId());
         return todoRepository.save(todo);
     }
 
