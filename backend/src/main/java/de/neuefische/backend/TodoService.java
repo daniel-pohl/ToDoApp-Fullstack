@@ -26,9 +26,10 @@ public class TodoService {
         return todoRepository.save(todo);
     }
 
-    public Todo findTodoById(String id)  {
+    public Todo findTodoById(String id) throws TodoNotFoundException {
         return todoRepository.findById(id)
-                .orElseThrow();
+                .orElseThrow(() ->
+                        new TodoNotFoundException("Todo with id " + id + " not found"));
     }
 
     public Todo updateTodo(String id, Todo todo) {

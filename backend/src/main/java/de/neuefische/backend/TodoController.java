@@ -18,7 +18,7 @@ public class TodoController {
     }
 
     @GetMapping("/todo/{id}")
-    public Todo getTodoById(@PathVariable String id) {
+    public Todo getTodoById(@PathVariable String id) throws TodoNotFoundException {
         return todoService.findTodoById(id);
     }
 
