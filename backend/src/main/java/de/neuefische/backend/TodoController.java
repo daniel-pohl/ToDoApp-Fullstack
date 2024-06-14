@@ -1,9 +1,12 @@
 package de.neuefische.backend;
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@Validated
 public class TodoController {
 
     private final TodoService todoService;
@@ -23,7 +26,7 @@ public class TodoController {
     }
 
     @PostMapping("/todo")
-    public Todo addTodo(@RequestBody Todo todo) {
+    public Todo addTodo(@Valid @RequestBody Todo todo) {
         return todoService.saveTodo(todo);
     }
 

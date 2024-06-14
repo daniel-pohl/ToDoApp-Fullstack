@@ -13,8 +13,11 @@ function NewTodoCard(props: Props) {
     const [text, setText]
         = useState('')
 
-    function changetext(event: React.ChangeEvent<HTMLInputElement>) {
-        setText(event.target.value)
+    function changeText(event: React.ChangeEvent<HTMLInputElement>) {
+        const newText = event.target.value;
+        if (newText.trim() !== "") {
+            setText(newText);
+        }
     }
 
 
@@ -29,7 +32,7 @@ function NewTodoCard(props: Props) {
 
     return (
         <div className="todo-card new-todo">
-            <input type="text" value={text} onInput={changetext}/>
+            <input type="text" value={text} onInput={changeText}/>
             <button onClick={saveTodo}>Save</button>
 
         </div>
