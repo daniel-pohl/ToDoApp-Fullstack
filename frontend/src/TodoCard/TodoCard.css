@@ -16,3 +16,7 @@
     right: 1px;
     bottom: 1px;
 }
+.move-button{
+    background-color: chartreuse;
+    height: 40px;
+}

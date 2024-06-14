@@ -29,9 +29,12 @@ function App() {
         {
             allPossibleTodos.map(status => {
                 const filteredTodos = todos.filter(todo => todo.status === status)
-                return <TodoColumn status={status}
-                                   todos={filteredTodos}
-                                   onNewTodoItemChange={fetchTodos}/>
+                return <TodoColumn
+                    status={status}
+                    todos={filteredTodos}
+                    onNewTodoItemChange={fetchTodos}
+                    key={status}
+                />
             })
         }
     </div>
