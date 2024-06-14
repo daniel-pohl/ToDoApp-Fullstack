@@ -1,0 +1,16 @@
+input{
+    border: black;
+    border-radius: 1px;
+    border-width: 0 0 1px 0;
+    padding: 10px;
+
+}
+
+.todo-card.new-todo{
+    display: grid;
+    gap: 5px;
+}
+
+button{
+    background-color: cornflowerblue;
+}

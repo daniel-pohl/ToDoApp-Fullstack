@@ -10,14 +10,14 @@ function App() {
     //Daten abrufen über einen State
     const [todos, setTodos] = useState<Todo[]>()
 
-    useEffect(
-        ()=>{
-            axios.get("/api/todo")
-                .then(response =>{
-                    setTodos(response.data)
-                })
-        },[]
-    )
+    function fetchTodos(){
+
+        axios.get("/api/todo")
+            .then(response =>{
+                setTodos(response.data)
+            })
+    }
+    useEffect(fetchTodos,[])
 
     if(!todos){
         return "Lade...."
@@ -29,7 +29,9 @@ function App() {
         {
             allPossibleTodos.map(status => {
                 const filteredTodos = todos.filter(todo => todo.status === status)
-                return <TodoColumn status={status} todos={filteredTodos}/>
+                return <TodoColumn status={status}
+                                   todos={filteredTodos}
+                                   onNewTodoItemSaved={fetchTodos}/>
             })
         }
     </div>
