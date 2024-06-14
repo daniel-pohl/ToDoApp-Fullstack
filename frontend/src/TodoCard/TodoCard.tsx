@@ -9,8 +9,7 @@ type Props = {
 function TodoCard(props: Props) {
     return (
         <div className="todo-card">
-            {props.todo.description} (
-            {props.todo.status} )
+            {props.todo.description}
         </div>
     );
 }

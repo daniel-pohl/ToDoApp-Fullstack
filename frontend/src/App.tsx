@@ -3,6 +3,8 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import TodoColumn from "./TodoCard/TodoColumn.tsx";
 import {allPossibleTodos} from "./TodoCard/TodoStatus.ts";
+import './index.css';
+
 function App() {
 
     //Daten abrufen über einen State
@@ -22,7 +24,7 @@ function App() {
     }
 
   return (
-    <>
+    <div className="page">
         <h1>TODOS</h1>
         {
             allPossibleTodos.map(status => {
@@ -30,7 +32,7 @@ function App() {
                 return <TodoColumn status={status} todos={filteredTodos}/>
             })
         }
-    </>
+    </div>
   )
 }
 
