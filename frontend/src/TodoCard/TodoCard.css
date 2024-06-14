@@ -5,10 +5,14 @@
     padding: 10px;
     background-color: #f2f2f2;
     height: 70px;
-
     margin-bottom: 20px;
     display: flex;
     align-items: center;
 
+}
 
+.delete-button{
+    justify-self: end;
+    right: 1px;
+    bottom: 1px;
 }

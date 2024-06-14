@@ -31,7 +31,7 @@ function App() {
                 const filteredTodos = todos.filter(todo => todo.status === status)
                 return <TodoColumn status={status}
                                    todos={filteredTodos}
-                                   onNewTodoItemSaved={fetchTodos}/>
+                                   onNewTodoItemChange={fetchTodos}/>
             })
         }
     </div>

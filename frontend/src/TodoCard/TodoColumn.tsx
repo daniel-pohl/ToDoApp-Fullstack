@@ -6,7 +6,7 @@ import NewTodoCard from "./NewTodoCard.tsx";
 type Props = {
     status: TodoStatus,
     todos: Todo[],
-    onNewTodoItemSaved: () => void;
+    onNewTodoItemChange: () => void;
 
 }
 
@@ -16,11 +16,11 @@ function TodoColumn(props: Props) {
             <h2>{props.status}</h2>
 
             {
-                props.todos.map(todo => <TodoCard key={todo.id} todo={todo}/>)
+                props.todos.map(todo => <TodoCard key={todo.id} todo={todo} onNewTodoItemChange={props.onNewTodoItemChange} />)
             }
             {
                 (props.status === "OPEN") &&
-                <NewTodoCard onNewTodoItemSaved={props.onNewTodoItemSaved}/>
+                <NewTodoCard onNewTodoItemChange={props.onNewTodoItemChange}/>
             }
 
 

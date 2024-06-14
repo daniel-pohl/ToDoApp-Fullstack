@@ -5,7 +5,7 @@ import {Todo} from "./Todo.ts";
 
 
 type Props = {
-    onNewTodoItemSaved: () => void;
+    onNewTodoItemChange: () => void;
 }
 
 function NewTodoCard(props: Props) {
@@ -24,7 +24,7 @@ function NewTodoCard(props: Props) {
             description: text,
             status: "OPEN",
         } as Todo)
-            .then(props.onNewTodoItemSaved)        ;
+            .then(props.onNewTodoItemChange)        ;
     }
 
     return (
